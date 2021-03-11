@@ -1,17 +1,17 @@
 base = './dataset/digital_music/'
 gmf_config = {'num_epoch':85,
-              'batch_size': 2048,  #7000 ok
+              'batch_size': 2048,  
               #'optimizer': 'sgd',
               'sgd_lr': 1e-2,
               'optimizer': 'adam',
-              'adam_lr': 7e-3,   #1e-4  ok
+              'adam_lr': 7e-3,   
               'num_users': 0,
               'num_items': 0,
               'latent_dim_gmf': 128,
               'problem' : 'topk' ,  #topk or prediction
-              'k' : 12,
+              'k' : 10,
               'num_negative': 4,
-              'l2_regularization': 0    , #ok  #1e-6 ok
+              'l2_regularization': 0    ,
               #'train_path': base + 'digital_music.train.rating' , 
               #'val_path'  : base + 'digital_music.valid.rating',
               #'test_path' : base + 'digital_music.test.rating' , 
@@ -25,19 +25,19 @@ gmf_config = {'num_epoch':85,
                }
 
 mlp_config = {'num_epoch': 50,
-              'batch_size': 2048,          #1024 ,          #256 ,     #10000 #25000,
+              'batch_size': 2048,  
               'val_batch_size' : 2048,
                #'optimizer': 'sgd',
               'sgd_lr':  5e-3,
               'optimizer': 'adam',
-              'adam_lr':   5e-3,           #5e-5,  #1e-3 ok
+              'adam_lr':   5e-3,     
               'num_users': 6040,
               'num_items': 3706,
               'num_layers_mlp' : 2,
               'latent_dim_mlp': 16,
               'problem' : 'topk' ,  #topk or prediction
               'num_negative': 4,   #3
-              'k' : 13,
+              'k' : 10,
               'l2_regularization': 0 ,  #  0.0000001,  # MLP model is sensitive to hyper params
               # 'train_path' :  base + 'digital_music.train.rating' ,   
               # 'val_path'   :  base + 'digital_music.valid.rating',
@@ -56,15 +56,15 @@ neumf_config = {'num_epoch': 60,
                 #'optimizer': 'sgd',
                 'sgd_lr': 1e-3,
                 'optimizer': 'adam',
-                'adam_lr': 1e-4,                      #1e-2 best       #65.2 , 37.5
+                'adam_lr': 1e-4,                      
                 'num_users': 6040,
                 'num_items': 3706,
                 'problem' :  'prediction' ,      #'topk' , 
-                'latent_dim_gmf': 16,                  #16  best
-                'latent_dim_mlp': 32,                  #64  best
+                'latent_dim_gmf': 16,                  
+                'latent_dim_mlp': 32,                  
                 'num_negative': 4,
-                'k' : 15,
-                'l2_regularization': 1e-3,  #0.01,
+                'k' : 10,
+                'l2_regularization': 1e-3, 
                 'gmf_out_dim' : 8 ,
                 'mlp_out_dim' : 8 ,
                 'pretrained': False,
